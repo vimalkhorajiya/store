@@ -66,8 +66,12 @@ Not affiliated with, endorsed by, or sponsored by OpenAI.
 
   They use the fake data from `tests/preview.html`, so none of your real chat titles appear.
   Regenerate any time with `node tools/screenshots.js`.
-- Small promo tile: 440×280 PNG. Optional, but it is what shows in search results — not generated,
-  since it is a marketing graphic rather than a screenshot.
+- Promo tiles: **already generated** in `store/promo/`, both 24-bit PNG with no alpha channel,
+  which is what the store requires:
+  - `promo-small-440x280.png` — the **Small promo tile**; this is what shows in search results
+  - `promo-marquee-1400x560.png` — the **Marquee promo tile**, used if the extension is featured
+
+  Regenerate with `npm run promo`.
 
 **URLs**
 - Privacy policy: host `store/PRIVACY.md` somewhere public (GitHub Pages, a gist, your site) and

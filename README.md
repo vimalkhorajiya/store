@@ -12,6 +12,7 @@ that anyone can open. The extension's source lives in a separate, private reposi
 | [PUBLISHING.md](PUBLISHING.md) | The same process with the reasoning and edge cases. |
 | [LISTING.md](LISTING.md) | Listing copy, permission justifications, data-usage answers. |
 | [screenshots/](screenshots) | The five 1280×800 store screenshots. |
+| [promo/](promo) | Small (440×280) and marquee (1400×560) promo tiles, 24-bit PNG. |
 
 ### About the extension
 
