@@ -58,8 +58,11 @@ https://github.com/vimalkhorajiya/store/blob/main/PRIVACY.md
 
 **Do:**
 1. Go to <https://chrome.google.com/webstore/devconsole>
-2. Click **Account** in the left sidebar. Check your contact email shows **Verified** — publishing
-   is blocked without it.
+2. Click **Settings** in the left sidebar (this is the account-level page, *not* inside the item).
+   Enter a **Contact email**, save, then open the confirmation mail Google sends and click the
+   link. Reload and check it says **Verified**.
+   *Publishing is blocked until this is verified — it is a separate address from the one in the
+   privacy policy.*
 3. Click **Add new item**.
 4. Upload the zip:
 

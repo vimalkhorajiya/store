@@ -74,9 +74,19 @@ Not affiliated with, endorsed by, or sponsored by OpenAI.
   Regenerate with `npm run promo`.
 
 **URLs**
-- Privacy policy: host `store/PRIVACY.md` somewhere public (GitHub Pages, a gist, your site) and
-  paste the URL. **Fill in the contact address in that file first.**
+- Privacy policy: the public link to `PRIVACY.md` (see START-HERE Step 2).
 - Support / homepage: optional.
+
+**Publisher contact email — a separate thing, and it blocks publishing**
+
+This is *not* the address inside the privacy policy. It lives on the dashboard's own **Settings**
+page (left sidebar, below your items — not inside the item):
+
+1. Dashboard → **Settings** → **Contact email** → enter the address → **Save**.
+2. Google sends a confirmation mail. Open it and click the link.
+3. Reload the dashboard; the address should now show as **Verified**.
+
+Until it says Verified, every item you own refuses to publish.
 
 ---
 
@@ -113,8 +123,15 @@ conversation list from chatgpt.com and sends the delete/archive requests back to
 the session the user is already signed in to. The extension contacts no other host.
 ```
 
-**Remote code:** select **No, I am not using remote code.** All JavaScript ships inside the package;
-nothing is fetched or evaluated at runtime.
+**Remote code:** select **No, I am not using remote code.**
+
+If the form still asks for a justification box, paste:
+```
+All JavaScript, CSS and HTML ship inside the extension package and are reviewable in the uploaded
+zip. Nothing is fetched, injected or evaluated at runtime: there is no eval, no new Function, no
+remotely hosted script tag, and no CDN. The only network requests are to chatgpt.com, and they are
+data requests to that site's own API, never code.
+```
 
 **Data usage** — the extension transmits nothing off the device, so leave the collection categories
 unchecked, then tick all three certifications:
