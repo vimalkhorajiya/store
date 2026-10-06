@@ -1,0 +1,59 @@
+CHROME WEB STORE -- "Privacy practices" tab -- Work & Presence for greytHR
+Copy each block into the matching field, then click SAVE DRAFT at the bottom right.
+A blank justification is an automatic rejection, so fill all four.
+--------------------------------------------------------------------------------
+
+
+=== 1. SINGLE PURPOSE DESCRIPTION ===
+
+Shows a greytHR user how long they have worked and been present today, and when they can leave, calculated from their own attendance swipes on greytHR.
+
+
+=== 2. PERMISSION: storage ===
+
+Keeps the user's own data on their device: today's swipes (punch direction and time only), one summary per past day for the week view (capped at 120 days), the user's settings, and a record of which alerts were already shown today. Nothing is transmitted anywhere.
+
+
+=== 3. PERMISSION: alarms ===
+
+Refreshes the toolbar badge countdown and checks whether the work or presence target has been reached, once a minute. Manifest V3 service workers are suspended when idle, so a timer cannot be used; chrome.alarms is the supported way to run this periodic check.
+
+
+=== 4. PERMISSION: notifications ===
+
+Tells the user when they have reached their daily work target and their presence target, and optionally when a break has run longer than a limit they set. Each alert fires at most once a day and can be switched off in Settings.
+
+
+=== 5. HOST PERMISSION (https://*.greythr.com/*) ===
+
+The extension's only function is reading the user's own attendance swipe log on greytHR. greytHR hosts each company on its own subdomain (company.greythr.com), hence the wildcard. From the page it keeps only the punch direction and time of each swipe. No other site is accessed, and the extension makes no network requests.
+
+
+=== 6. REMOTE CODE ===
+
+Select the radio button: "No, I am not using remote code."
+If a justification box still appears, paste this:
+
+All JavaScript, CSS and HTML ship inside the extension package and are reviewable in the uploaded zip. Nothing is fetched, injected or evaluated at runtime: there is no eval, no new Function, no remotely hosted script and no CDN. The extension makes no network requests of any kind.
+
+
+=== 7. DATA USAGE ===
+
+"What user data do you plan to collect?" -- leave ALL NINE boxes UNCHECKED.
+
+Why: Google ties this disclosure to data leaving the user's device or reaching the
+developer. This extension makes no network requests, so nothing can leave the
+device. It matches PRIVACY.md, which the form makes you certify against.
+
+If a reviewer asks about "Website content" or "User activity": the extension reads
+the attendance tables on greytHR pages and keeps only the punch direction (IN/OUT)
+and time of each swipe, in chrome.storage.local on the user's device.
+
+Then tick all THREE certification checkboxes (all are true):
+  [x] I do not sell or transfer user data to third parties, apart from the approved use cases
+  [x] I do not use or transfer user data for purposes that are unrelated to my item's single purpose
+  [x] I do not use or transfer user data to determine creditworthiness or for lending purposes
+
+
+--------------------------------------------------------------------------------
+FINALLY: click SAVE DRAFT. The red error list does not clear until you save.
