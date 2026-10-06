@@ -1,0 +1,47 @@
+CHROME WEB STORE -- "Privacy practices" tab
+Copy each block below into the matching field, then click SAVE DRAFT at the bottom right.
+Do not leave any box empty: a blank justification is an automatic rejection.
+--------------------------------------------------------------------------------
+
+
+=== 1. SINGLE PURPOSE DESCRIPTION ===
+
+The extension has one purpose: to let a signed-in ChatGPT user delete, archive or unarchive their own conversations in bulk from chatgpt.com, at a request rate that does not trip ChatGPT's rate limits.
+
+
+=== 2. PERMISSION: storage ===
+
+Stores the user's own settings (pace profile, safety toggles, panel layout) and the queue of an unfinished bulk job -- chat IDs and titles only -- so a job interrupted by a page reload or crash can resume where it stopped instead of starting over. The queue is deleted when the job finishes. All of it stays in chrome.storage.local on the user's device.
+
+
+=== 3. PERMISSION: notifications ===
+
+A bulk job over a large history can run for 30-60 minutes in a background tab. If the user opts in (the setting is off by default), a desktop notification tells them when the job has finished or when it has paused and needs their attention, so they do not have to watch the tab.
+
+
+=== 4. HOST PERMISSION (chatgpt.com / chat.openai.com) ===
+
+This is the only site the extension works on and its entire function. It reads the user's own conversation list from chatgpt.com and sends the delete/archive requests back to chatgpt.com, reusing the session the user is already signed in to. The extension contacts no other host.
+
+
+=== 5. REMOTE CODE ===
+
+First select the radio button: "No, I am not using remote code."
+If a justification box still appears, paste this:
+
+All JavaScript, CSS and HTML ship inside the extension package and are reviewable in the uploaded zip. Nothing is fetched, injected or evaluated at runtime: there is no eval, no new Function, no remotely hosted script tag, and no CDN. The only network requests are to chatgpt.com, and they are data requests to that site's own API, never code.
+
+
+=== 6. DATA USAGE ===
+
+Leave EVERY "what user data do you collect" checkbox UNCHECKED.
+The extension transmits nothing off the user's device.
+
+Then scroll to the bottom and tick all THREE certification checkboxes:
+  [x] I do not sell or transfer user data to third parties, outside of the approved use cases
+  [x] I do not use or transfer user data for purposes that are unrelated to my item's single purpose
+  [x] I do not use or transfer user data to determine creditworthiness or for lending purposes
+
+
+--------------------------------------------------------------------------------
+FINALLY: click SAVE DRAFT. The red error list does not clear until you save.
