@@ -34,11 +34,27 @@ All JavaScript, CSS and HTML ship inside the extension package and are reviewabl
 
 === 6. DATA USAGE ===
 
-Leave EVERY "what user data do you collect" checkbox UNCHECKED.
-The extension transmits nothing off the user's device.
+"What user data do you plan to collect?" -- leave ALL NINE boxes UNCHECKED.
 
-Then scroll to the bottom and tick all THREE certification checkboxes:
-  [x] I do not sell or transfer user data to third parties, outside of the approved use cases
+Why: Google ties this disclosure to data leaving the user's device or becoming
+accessible to the developer. Neither happens here. Chat titles/dates/IDs are read
+into memory to draw the list; the unfinished-job queue is written to
+chrome.storage.local on the user's own machine; exports go to the user's disk via
+the browser's download flow. There is no server, no analytics and no telemetry.
+This also matches PRIVACY.md, which the form makes you certify against -- a form
+that contradicts the policy is a common rejection reason.
+
+If a reviewer queries it, the two categories they might raise are:
+  - Authentication information: the ChatGPT Authorization token is read and
+    replayed to chatgpt.com only. In memory only, never stored, never sent
+    anywhere else.
+  - Personal communications / Website content: chat TITLES are read (never
+    message bodies) and titles are kept locally in the resumable job queue.
+Neither is "collection" under Google's definition, because nothing leaves the
+device. PRIVACY.md documents both in a table.
+
+Then tick all THREE certification checkboxes (all are true):
+  [x] I do not sell or transfer user data to third parties, apart from the approved use cases
   [x] I do not use or transfer user data for purposes that are unrelated to my item's single purpose
   [x] I do not use or transfer user data to determine creditworthiness or for lending purposes
 
