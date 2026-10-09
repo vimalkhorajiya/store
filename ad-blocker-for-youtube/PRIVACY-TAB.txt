@@ -1,0 +1,63 @@
+CHROME WEB STORE -- "Privacy practices" tab -- Ad Blocker for YouTube
+Copy each block into the matching field, then click SAVE DRAFT at the bottom right.
+A blank justification is an automatic rejection, so fill all four.
+--------------------------------------------------------------------------------
+
+
+=== 1. SINGLE PURPOSE DESCRIPTION ===
+
+Blocks ads on YouTube — video ads, sponsored search results, feed and Shorts ads, and YouTube Premium promotions — with an optional per-channel allowlist so the user can keep ads on for creators they want to support.
+
+
+=== 2. PERMISSION: scripting ===
+
+Registers the extension's own packaged content scripts on YouTube pages with chrome.scripting.registerContentScripts instead of declaring them in the manifest. This lets them be fully unregistered when the user pauses the extension, and lets each optional hiding stylesheet (feed ads, Shorts ads, Premium promos, the anti-adblock dialog) be injected only while its setting is on. Only files inside the package are registered; nothing is fetched or evaluated at runtime.
+
+
+=== 3. PERMISSION: declarativeNetRequest ===
+
+A static ruleset blocks requests that YouTube pages make to ad and ad-measurement endpoints (doubleclick.net, googlesyndication.com, googleadservices.com, and paths such as youtube.com/pagead/, /api/stats/ads and /ptracking). Every rule is limited to requests initiated by youtube.com or youtube-nocookie.com, so no other website is affected, and the user can switch the ruleset off in Settings. When the user has chosen to allow ads on a channel, a temporary per-tab session rule lets that tab's requests through while they watch that channel, so the creator is credited for the ad. No request is read or recorded.
+
+
+=== 4. PERMISSION: storage ===
+
+Keeps the user's settings, the channels they chose to allow ads on (channel ID, channel name and the date it was added), and counts of ads blocked: one set of counts per day, kept for 60 days, plus a per-tab count in session storage that is cleared when the browser closes. Everything stays on the device; nothing is transmitted.
+
+
+=== 5. HOST PERMISSIONS (*://*.youtube.com/*, *://*.youtube-nocookie.com/*) ===
+
+The extension's single purpose is blocking ads on YouTube, so its content scripts run on YouTube's own pages (www, m and music.youtube.com) and inside YouTube's embedded players (youtube.com/embed and youtube-nocookie.com/embed frames). There they remove ad entries from the data YouTube sends to its player and pages before it is displayed, skip any ad that still plays, and hide ad placements. No other website is accessed. The extension makes no network requests of its own and sends nothing anywhere.
+
+
+=== 6. REMOTE CODE ===
+
+Select the radio button: "No, I am not using remote code."
+If a justification box still appears, paste this:
+
+All JavaScript, CSS and HTML ship inside the extension package and are reviewable in the uploaded zip. One packaged file, src/page/main.js, is registered with chrome.scripting.registerContentScripts to run in YouTube pages' main world; it is loaded from the package, not from a server. There is no eval, no new Function, no remotely hosted script and no CDN, and the extension makes no network requests of its own.
+
+
+=== 7. DATA USAGE ===
+
+"What user data do you plan to collect?" -- leave ALL NINE boxes UNCHECKED.
+
+Why: Google ties this disclosure to data leaving the user's device or reaching the
+developer. This extension makes no network requests of its own, so nothing can leave
+the device through it. It matches PRIVACY.md, which the form makes you certify against.
+
+If a reviewer asks about "Website content": the extension reads the data YouTube sends
+to its own player and pages, inside the browser, only to remove the ad entries from it.
+None of that data is kept.
+
+If a reviewer asks about "User activity" or "Web history": the extension keeps counts
+of ads blocked, not what was watched. Video IDs are held in memory while a page is open,
+so the same ad is not counted twice, and are discarded when the page closes.
+
+Then tick all THREE certification checkboxes (all are true):
+  [x] I do not sell or transfer user data to third parties, apart from the approved use cases
+  [x] I do not use or transfer user data for purposes that are unrelated to my item's single purpose
+  [x] I do not use or transfer user data to determine creditworthiness or for lending purposes
+
+
+--------------------------------------------------------------------------------
+FINALLY: click SAVE DRAFT. The red error list does not clear until you save.

@@ -1,6 +1,6 @@
 # Chrome Web Store assets
 
-Public listing material for two Chrome extensions.
+Public listing material for three Chrome extensions.
 
 This repository is public for one reason: the Chrome Web Store requires each extension's privacy
 policy at a URL anyone can open. The extensions' source code lives in a separate, private
@@ -43,6 +43,25 @@ countdown badge and leave-time estimates. Makes no network requests at all. File
 | [work-presence/promo/](work-presence/promo) | Small and marquee promo tiles. |
 
 *Not affiliated with, endorsed by, or sponsored by greytHR or Greytip Software.*
+
+---
+
+## Ad Blocker for YouTube
+
+Removes YouTube video, search, feed and Shorts ads before they load, with an allowlist for the
+channels you want to support. Makes no network requests of its own. Files are in
+[`ad-blocker-for-youtube/`](ad-blocker-for-youtube):
+
+| File | What it is |
+|---|---|
+| [ad-blocker-for-youtube/PRIVACY.md](ad-blocker-for-youtube/PRIVACY.md) | **The privacy policy** submitted to the Chrome Web Store. |
+| [ad-blocker-for-youtube/START-HERE.md](ad-blocker-for-youtube/START-HERE.md) | Short step-by-step for publishing the listing. |
+| [ad-blocker-for-youtube/LISTING.md](ad-blocker-for-youtube/LISTING.md) | Listing copy, permission justifications, data-usage answers, reviewer test instructions. |
+| [ad-blocker-for-youtube/PRIVACY-TAB.txt](ad-blocker-for-youtube/PRIVACY-TAB.txt) | The Privacy-tab answers as plain text, ready to paste. |
+| [ad-blocker-for-youtube/screenshots/](ad-blocker-for-youtube/screenshots) | Five 1280×800 store screenshots. |
+| [ad-blocker-for-youtube/promo/](ad-blocker-for-youtube/promo) | Small and marquee promo tiles. |
+
+*Not affiliated with, endorsed by, or sponsored by YouTube or Google LLC.*
 
 ---
 
